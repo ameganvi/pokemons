@@ -21,11 +21,11 @@
 @import "layout/_theme";
 @import "layout/_print";
 
-// Components
-@import "../components/foo-bar/foo-bar";
+// Commons
+//@import "../../../../../commons/foo-bar/foo-bar";
 
-// Pages
-@import "../pages/home/home";
+// Components
+//@import "./../../../home/components/home";
 
 // Tests
 @import "tests/tests";

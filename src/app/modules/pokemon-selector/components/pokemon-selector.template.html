@@ -1,0 +1,39 @@
+<center>
+  <h1>Bienvenue chez les Pokemons</h1>
+  <p>All Pokemons</p>
+</center>
+
+<!-- Getting all Pokemons from the service and putting it in  the selectbox-->
+<div class="container">
+     <center>
+         <select
+             ng-model ="pokemonSelector.selectedPoekemon"
+             ng-options=" pokemon.Number +' - '+ pokemon.Name  for pokemon in  pokemonSelector.pokemonDetail"
+             name="pokemon-selector"
+             id="pokemon"
+          >
+         </select>
+     </center>
+</div>
+<br /><br /><br />
+
+<!-- Displaying information of the Pokemon -->
+<div class="container" ng-if="pokemonSelector.selectedPoekemon">
+  <div class="row">
+    <div class="col-sm-2">
+      <img alt="" src="https://img.pokemondb.net/artwork/{{pokemonSelector.selectedPoekemon.Name | lowercase}}.jpg" height="100px" width="100px">
+    </div>
+    <div class="col-sm-2" style="background-color:lavender;" >
+        <h4>Caractéristiques</h4>
+            <h6 id="Pmaxi">  Poids Maximum : {{pokemonSelector.selectedPoekemon.Weight.Maximum}}</h6>
+            <h6 id="Pmini">  Poids Minimum : {{pokemonSelector.selectedPoekemon.Weight.Minimum}}</h6>
+            <h6 id="Hmaxi">  Taille Maximum : {{pokemonSelector.selectedPoekemon.Height.Minimum}}</h6>
+            <h6 id="Hmini">  Taille Minimum :{{pokemonSelector.selectedPoekemon.Height.Minimum}}</h6>
+    </div>
+    <div class="col-sm-1">
+    </div>
+    <div class="col-sm-6" style="background-color:lavender;">
+      <p>{{pokemonSelector.selectedPoekemon.About}}</p>
+    </div>
+  </div>
+</div>
